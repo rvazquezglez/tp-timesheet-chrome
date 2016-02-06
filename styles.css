@@ -1,0 +1,43 @@
+body {
+  font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+  font-size: 60%;
+}
+#status {
+  /* avoid an excessively wide status text */
+  white-space: pre;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 400px;
+}
+.rTable {     
+  display: table;     
+  width: 100%; 
+} 
+.rTableRow {     
+  display: table-row; 
+} 
+.rTableHeading {    
+  display: table-header-group;    
+  background-color: #ddd; 
+} 
+.rTableCell, .rTableHead {    
+  display: table-cell;    
+  padding: 3px 10px;    
+  border: 1px solid #999999; 
+} 
+.rTableHeading {     
+  display: table-header-group;    
+  background-color: #ddd;     
+  font-weight: bold; 
+} 
+.rTableFoot {    
+  display: table-footer-group;    
+  font-weight: bold;    
+  background-color: #ddd; 
+} 
+.rTableBody {     
+  display: table-row-group; 
+}
+input {  
+  width: 30px;
+}

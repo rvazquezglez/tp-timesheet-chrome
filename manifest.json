@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+
+  "name": "Timesheet Nearsoft-Switchfly",
+  "description": "This extension extracts your times from Switchfly Target Process and sends it to Nearsoft Timesheet",
+  "version": "1.0",
+  "offline_enabled": true,
+  "background": {
+    "persistent":false,
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [ {
+    "js": ["jquery-2.2.0.js", "underscore.js", "content.js"],
+    "matches": [ "http://*/*", "https://*/*"], //TODO: limit to TP urls
+    "run_at": "document_idle",
+    "all_frames": false
+  }],
+  "browser_action": {
+    "default_icon": "img/timesheet.png",
+    "default_popup": "popup.html"
+  }
+  // No special permissions required...
+  //"permissions": [
+  //  "activeTab",
+  //  "<all_urls>"
+  //]
+}

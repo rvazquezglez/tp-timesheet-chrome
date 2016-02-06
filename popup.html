@@ -1,0 +1,50 @@
+    <!doctype html>
+    <!--
+    This page is shown when the extension button is clicked, because the
+    "browser_action" field in manifest.json contains the "default_popup" key with
+    value "popup.html".
+  -->
+  <html data-ng-app="">
+  <head>
+    <title>Getting Started Extension's Popup</title>
+    <!--
+    - JavaScript and HTML must be in separate files: see our Content Security
+    - Policy documentation[1] for details and explanation.
+    -
+    - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+  -->
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <script src="popup.js"></script>
+  <script data-require="angular.js@1.2.x" src="angular.min.js" data-semver="1.2.28"></script>
+</head>
+<body data-ng-init="days = ['Domingo','Lunes', 'Martes','Miercoles','Jueves', 'Viernes', 'Sabado']; conceptos = ['Laborado', 'PTO', 'Holiday', 'Otro']">
+  <div class="rTable">
+    <div class="rTableHeading">
+      <div class="rTableHead">
+        Concepto
+      </div>
+      <div class="rTableHead" ng-repeat="day in days">
+        {{day}}
+      </div>
+    </div>
+    <div class="rTableBody">
+      <div class="rTableRow" ng-repeat="concepto in conceptos">
+        <div class="rTableCell">
+          {{concepto}}
+        </div>
+        <div class="rTableCell" ng-repeat="day in days">
+          <input type="text" class="{{day}}">
+        </div>
+      </div>
+    </div>
+    <div class="rTableFoot">
+      <div class="rTableHead">
+        <button>Enviar</button>
+      </div>
+    </div>
+  </div>
+  <div id="status"></div>
+  <img id="image-result" hidden>
+</body>
+</html>
+
